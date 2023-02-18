@@ -25,7 +25,7 @@ struct RawSlackUrl<'r> {
 ///
 /// Generate a new webhook url
 ///
-/// Encrypts the `slack_url` json input, for use later with [sms_with_url]
+/// Encrypts the `slack_url` json input, for use later with [sms_with_url()]
 #[post("/get_webhook", data = "<raw_slack_url>")]
 fn get_webhook(raw_slack_url: Option<Json<RawSlackUrl<'_>>>) -> Result<String, (Status, String)> {
     // Error handling for the form input validation
@@ -56,7 +56,7 @@ async fn sms_with_url(
     let decrypted = encryption::decrypt_url(slack_url);
 
     // Handle decryption errors with the slack webhook url
-    if (decrypted.is_err()) {
+    if decrypted.is_err() {
         return Err((
             Status::BadRequest,
             "Failed to decrypt slack url. Are you sure you have the right callback url?"
