@@ -1,0 +1,19 @@
+[package]
+name = "slackms"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+slack-hook2 = "0.10.1"
+config = "0.13.1"
+log = "0.4"
+fern = "0.5"
+chrono = "0.4.23"
+magic-crypt = "3.1.12"
+
+[dependencies.rocket]
+version = "0.5.0-rc.2"
+features = ["json"]
