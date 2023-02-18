@@ -8,4 +8,4 @@ COPY ./ ./
 RUN cargo build --release
 
 # Run the binary
-CMD ["./target/release/sms-slack-relay"]
+CMD ["./target/release/slackms"]

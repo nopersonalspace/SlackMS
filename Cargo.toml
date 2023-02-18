@@ -1,5 +1,5 @@
 [package]
-name = "sms-slack-relay"
+name = "slackms"
 version = "0.1.0"
 edition = "2021"
 
